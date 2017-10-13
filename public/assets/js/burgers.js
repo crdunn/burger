@@ -12,9 +12,9 @@ $(function() {
     }).then(
       function() {
         console.log("changed devoured to", devoured);
-        window.location.reload();
       }
     );
+    window.location.reload();
   });
 
   $(".create-form").on("submit", function(event) {
