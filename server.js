@@ -1,18 +1,21 @@
-//required packages
 var express = require("express");
-var exphbs = require("express-handlebars");
-var methodOverride = require("method-override");
-var bodyPar = require("body-parser");
-var mysql = require("mysql");
+var bodyParser = require("body-parser");
 
-//setting up the express server
+var port = process.env.PORT || 3000;
+
 var app = express();
-var port = 3000;
+
+app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 
 var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+var routes = require("./controllers/burger_controllers.js");
+
+app.use("/", routes);
+
+app.listen(port);
