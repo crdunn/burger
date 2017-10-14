@@ -1,3 +1,21 @@
 body{
 	background-color: orange;
+};
+
+.image {
+	text-align: center;
+}
+
+.title {
+	text-align: center;
+}
+
+.lists{
+	float:left;
+	margin-left: 5%;
+}
+
+.adder{
+	clear:both;
+	margin-left: 30%;
 }
